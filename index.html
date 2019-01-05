@@ -1,3 +1,316 @@
+<!DOCTYPE html>
 <html>
-Test
+  <head>
+    <title>Plantenactie</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_top">
+    <link rel="icon" href="assets/plantenactie groen.png" type="image/gif" sizes="20x20">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" >
+          <header class="mdl-layout__header" style='display:none;' >
+              <div class="mdl-layout__header-row">
+                  <!-- Title -->
+                  <span class="mdl-layout-title" id="page_title" style='width: 100%'>
+                    <span id="title_link" style=" cursor:pointer;">
+                    <!--i class='material-icons' style='vertical-align:text-bottom; color:#008000;' >nature</i -->
+                    <img src="assets/plantenactie groen.png"  style="width:30px; height:auto;">
+                    &nbsp Plantenactie </span> <span id='userHead' style="float: right;  color: #757575; font-size: 0.84em;"></span></span>
+                  <!-- Add spacer, to align navigation to the right -->
+                  <div class="mdl-layout-spacer"></div>
+                  <div class="mdl-spinner mdl-js-spinner is-active" style='display: none;' id="spinner"></div>
+
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                    mdl-textfield--floating-label mdl-textfield--align-right">
+
+                      <div class="mdl-textfield__expandable-holder">
+                          <input class="mdl-textfield__input" type="text" name="sample"
+                                 id="fixed-header-drawer-exp">
+                      </div>
+                  </div>
+                  </div>
+                  <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style='width: 100%;' id='loader'></div>
+
+                  <div class="mdl-layout__tab-bar mdl-js-ripple-effect" id='userBar' style='display:none;'>
+    <a id='tab1' href="#newHouseCard" class="mdl-layout__tab is-active">Bestelling</a>
+    <a href="#editHouseCard" class="mdl-layout__tab">Weizig</a>
+    <a href="#lijstCard" class="mdl-layout__tab">Lijst</a>
+    <a href="#recordsCard" class="mdl-layout__tab">Records</a>
+
+  </div>
+          </header>
+
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title" id='menuTitle'>Menu</span>
+            <nav class="mdl-navigation">
+          <div id="login_nav">
+
+              <a class="mdl-navigation__link" id="ahtml" ><i class="material-icons" style="vertical-align:top;">account_circle</i> &nbsp;  Log in</a>
+              <a class="mdl-navigation__link" id="ahtml" ><i class="material-icons" style="vertical-align:top;">help</i> &nbsp; Help</a>
+             </div>
+             <div id="user_nav" style="display:none;">
+             <a class="mdl-navigation__link" id="ahtml"  onlclick="$('#tab1').trigger('click')"><i class="material-icons" style="vertical-align:top;">add</i> &nbsp;   Nieuwe bestelling</a>
+             <a class="mdl-navigation__link" id="ahtml" href='#editHouseCard'><i class="material-icons" style="vertical-align:top;">edit</i> &nbsp; Wijzig bestelling</a>
+             <a class="mdl-navigation__link" id="ahtml" onclick="displayPage(&quot;add&quot;)"><i class="material-icons" style="vertical-align:top;">playlist_add</i> &nbsp; Lijst invoeren</a>
+
+              <a class="mdl-navigation__link" id="ahtml" onclick="displayPage(&quot;wijzigen&quot;)"><i class="material-icons" style="vertical-align:top;">bar_chart</i> &nbsp; Records</a>
+             </div>
+
+              <img src="https://www.scouting.nl/downloads/ondersteuning/communicatie/huisstijl/huisstijl-logos-logoformats-en-achtergronden/851-scouting-nederland-logo-rgb-png-bestand-transparante-achtergrond/file" style="width: 50%;" id="name">
+
+
+          </nav>
+              <nav class="mdl-navigation" id='houseMenu' style='display: none';>
+
+
+              </nav>
+          </div>
+
+          <main class="mdl-layout__content">
+
+              <div class="page-content" style='margin: 0 auto;'>
+<div id='loginDiv'>
+              <center>
+
+<h3 style='color: #008000;'> Log In</h3>
+              <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="username" name='username' >
+        <label class="mdl-textfield__label" for="username"> <i class="material-icons" style="vertical-align:middle;">account_circle</i> Naam</label>
+  </div><br>
+  <div class="mdl-textfield mdl-js-textfield">
+<input class="mdl-textfield__input" type="password" id="code" name='password'>
+<label class="mdl-textfield__label" for="code"> <i class="material-icons" style="vertical-align:middle;">help</i> Code</label>
+</div><br><br>
+<button class="mdl-button mdl-js-button">
+  Help
+</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id='loginButton'>
+  Log in
+</button><br><br><br>
+</center>
+<i>   De code kan je vinden op je plantenactie brief</i>
+</div>
+<div id='userpage' style='display: none;'>
+  <center>
+</center>
+<div class="mdl-grid" id='actions'>
+
+  <section class="mdl-cell mdl-cell--9-col cards mdl-layout__tab-panel is-active" id='newHouseCard'>
+<h5 style='margin-bottom: 0;'><i class='material-icons'>add</i> Nieuwe bestelling</h5>
+<div id='streetInput'>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id='straatInput'>
+    <input class="mdl-textfield__input" type="text" id="straat">
+    <label class="mdl-textfield__label" for="straat">Straat</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id='nummerInput'>
+    <input class="mdl-textfield__input" type="text" id="nummer">
+    <label class="mdl-textfield__label" for="nummer">HuisNr</label>
+
+  </div>
+</div>
+<div id='naamDiv'>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id='naamInput'>
+    <input class="mdl-textfield__input" type="text" id="kopernaam">
+    <label class="mdl-textfield__label" for="kopernaam">Naam</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id='emailInput'>
+      <input class="mdl-textfield__input" type="text" id="email">
+      <label class="mdl-textfield__label" for="email">Email (evt)</label>
+    </div>
+</div>
+  <div id='gerDiv' class='bloemDiv'>
+  <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+    <input class="mdl-textfield__input" type="text" id="ger">
+    <label class="mdl-textfield__label" for="ger">Geraniums</label>
+
+  </div>
+  <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+    <input class="mdl-textfield__input" type="text" id="gger">
+    <label class="mdl-textfield__label" for="gger">+ Gratis</label>
+
+  </div>
+</div>
+<div id='fucDiv' class='bloemDiv'>
+  <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="fuc">
+      <label class="mdl-textfield__label" for="fuc">Fuchia's</label>
+
+    </div>
+    <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+      <input class="mdl-textfield__input" type="text" id="gfuc">
+      <label class="mdl-textfield__label" for="gfuc">+ Gratis</label>
+
+    </div>
+  </div>
+  <div id='smDiv' class='bloemDiv'>
+    <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+        <input class="mdl-textfield__input" type="text" id="sm">
+        <label class="mdl-textfield__label" for="sm">Spaanse Margrieten</label>
+
+      </div>
+      <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+        <input class="mdl-textfield__input" type="text" id="gsm">
+        <label class="mdl-textfield__label" for="gsm">+ Gratis</label>
+
+      </div>
+    </div>
+    <div id='bpDiv' class='bloemDiv'>
+
+      <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+         <input class="mdl-textfield__input" type="text" id="bp">
+         <label class="mdl-textfield__label" for="bp">Bloempotten</label>
+
+       </div>
+       <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+         <input class="mdl-textfield__input" type="text" id="gbp">
+         <label class="mdl-textfield__label" for="gbp">+ Gratis</label>
+
+       </div>
+     </div>
+<div id='footer'>
+       <button class="mdl-button mdl-js-button" id='kosten'>
+         €0
+       </button>
+       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id='addButton' onclick = 'saveHouse()'>
+       Opslaan!
+     </button>
+
+</div>
+
+</section>
+
+
+  <section class="mdl-cell mdl-cell--8-col cards mdl-layout__tab-panel" id='editHouseCard'>
+<h5 style='margin-bottom: 0;'><i class='material-icons'>edit</i> Weizig bestelling</h5>
+<br>
+Kies een bestelling om te wijzigen<br><br>
+<select id='huizenSelect'></select>
+<button class="mdl-button mdl-js-button mdl-button--raised" id='addButton'>
+Weizig
+</button>
+</section>
+
+<section class="mdl-cell mdl-cell--8-col cards mdl-layout__tab-panel" id='lijstCard'>
+<h5 style='margin-bottom: 0;'><i class='material-icons'>playlist_add</i> Lijst Invoeren</h5>
+
+<i>Deze optie is vooral bedoeld voor grote schermen</i>
+<br><br>
+<div id='lijstInputs'>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label lijst" id='lijstStraatInput'>
+    <input class="mdl-textfield__input" type="text" id="lijstStraat">
+    <label class="mdl-textfield__label" for="lijstStraat">Straat</label>
+</div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label lijst" id='lijstNummerInput'>
+    <input class="mdl-textfield__input" type="text" id="lijstStraat">
+    <label class="mdl-textfield__label" for="lijstStraat">HuisNr</label>
+</div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label lijst" id='lijstNaamInput'>
+    <input class="mdl-textfield__input" type="text" id="lijstStraat">
+    <label class="mdl-textfield__label" for="lijstStraat">Naam</label>
+</div>
+<div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+  <input class="mdl-textfield__input" type="text" id="ger">
+  <label class="mdl-textfield__label" for="ger">Geraniums</label>
+
+</div>
+<div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+  <input class="mdl-textfield__input" type="text" id="gger">
+  <label class="mdl-textfield__label" for="gger">+ Gratis</label>
+
+</div>
+<div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="fuc">
+    <label class="mdl-textfield__label" for="fuc">Fuchia's</label>
+
+  </div>
+  <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+    <input class="mdl-textfield__input" type="text" id="gfuc">
+    <label class="mdl-textfield__label" for="gfuc">+ Gratis</label>
+
+</div>
+  <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+      <input class="mdl-textfield__input" type="text" id="sm">
+      <label class="mdl-textfield__label" for="sm">Spaanse Margrieten</label>
+
+    </div>
+    <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+      <input class="mdl-textfield__input" type="text" id="gsm">
+      <label class="mdl-textfield__label" for="gsm">+ Gratis</label>
+
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+       <input class="mdl-textfield__input" type="text" id="bp">
+       <label class="mdl-textfield__label" for="bp">Bloempotten</label>
+
+     </div>
+     <div class="mdl-textfield mdl-js-textfield count mdl-textfield--floating-label" >
+       <input class="mdl-textfield__input" type="text" id="gbp">
+       <label class="mdl-textfield__label" for="gbp">+ Gratis</label>
+
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+<section class="mdl-cell mdl-cell--10-col cards mdl-layout__tab-panel" id='recordsCard'>
+<h5 style='margin-bottom: 0;'><i class='material-icons'>bar_chart</i> Jouw Records</h5>
+<br>
+
+</section>
+
+</div>
+
+
+
+
+
+
+
+</div>
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<img src="assets/plantenactie wit.png" id='plantenLogo'  style='width: 100px; height: auto; bottom: 20px; right:20px; position: fixed; '>
+
+              <br>
+  <!-- center> <img src='https://i.pinimg.com/originals/81/4b/c5/814bc5ce38a3880d7a9ec189b064cea6.png' id='logoBig' >
+  <img src='https://i.pinimg.com/originals/27/e8/76/27e876056b033bd9762b4f683dd1922e.png' id='logoMiddle' ></center -->
+
+              </div>
+              </main>
+                </div>
+
+
+                <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+                <script>
+                  // Initialize Firebase
+                  var config = {
+                    apiKey: "AIzaSyAv95OOAWL2H84Mz2IfoCJaBUFm4PsOeVA",
+                    authDomain: "plantenactie-24599.firebaseapp.com",
+                    databaseURL: "https://plantenactie-24599.firebaseio.com",
+                    projectId: "plantenactie-24599",
+                    storageBucket: "plantenactie-24599.appspot.com",
+                    messagingSenderId: "7128471445"
+                  };
+                  firebase.initializeApp(config);
+                </script>
+                <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src='script.js'></script>
+</body>
 </html>

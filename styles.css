@@ -1,0 +1,286 @@
+@keyframes createBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.mdl-layout__header {
+    color: #008000;
+    background: white;
+}
+    .mdl-layout__header .mdl-layout__drawer-button {
+        color: #008000;
+    }
+
+main {
+background: #ebebeb;
+
+}
+
+ .mdl-layout__header-row .mdl-navigation__link{
+     color: black;
+ }
+
+ .center{
+ text-align: center;}
+ #name:hover{
+ background: rgb(250, 250, 250) !important;}
+ h1,h2,h3{
+ color:#008000}
+ .page{
+ display: none;
+ }
+
+ #step_two{
+ display: none;}
+ .person{
+ display: block;}
+ .person{
+ display: block;
+ }
+ @media screen and (min-width: 1000px) {
+ #logoMiddle{
+ position: absolute;
+ bottom: 50px;
+ right: 50px;
+ animation: createBox 1s;
+ }
+ main{
+   background: Url('assets/hero.jpg') center / cover;
+ }
+ #logoBig{
+ display:none;}
+
+ .cards{
+   background: white !important;
+ }}
+
+  @media screen and (min-width: 1800px) {
+ #logoBig{
+ display: inline;
+ position: fixed;
+ bottom: 50px;
+ right: 50px;
+  animation: createBox 1s;
+ }
+
+ #logoMiddle{
+ display:none;}
+ }
+ @media screen and (max-width: 1000px) {
+ #logoBig{
+ width: 300px;
+ height: auto;
+ margin: 100px 0 auto;
+  animation: createBox 1s;
+ }
+ #logoMiddle{
+ display: none;}
+ #userHead{
+   display: none;
+ }
+#plantenLogo{
+display: none;
+
+}
+#lijstCard{
+  padding: 10px;
+}
+#lijstCard .count{
+  width: 6% !important;
+}
+.cards{
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
+
+}
+.mdl-grid{
+  padding : 0 !important;
+}
+ }
+
+
+
+
+  #logoSmall{
+ width: 20px;
+ height: 20px;
+  animation: createBox 1s;
+ }
+
+
+
+
+#joinCard > .mdl-card__title {
+  color: rgba(0,0,0,.70);
+  background:
+    url('https://i0.wp.com/lh3.googleusercontent.com/EIX5pscg5l1Quvsz17LKk6W5oCSIxOfukBAUmbGR4Uvs1uKDYvbNr0XYE7hqpI3KHQ=w185') bottom right 15% no-repeat #fff;
+}
+
+#newCard > .mdl-card__title {
+  color: #fff;
+  background : #f7ad00;
+}
+
+ .demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  margin: 10px;
+
+}
+
+.house{
+display: none;}
+
+ .mdl-cell {
+background: white;
+
+ border-radius:50%;
+ }
+ .mdl-cell h3{
+ padding: 0;
+ margin: 20px;
+ margin-left: 0;
+ }
+ .mdl-cell i{
+ vertical-align: text-top;}
+ p{
+ font-size: 1.5em;
+ margin-top: 10px;
+ }
+ .mdl-cell h5{
+ font-family: "Roboto","Helvetica","Arial",sans-serif;
+color: #008000;
+  }
+
+ .demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+#name{
+  position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 20%;
+}
+input, label{
+  font-size: 1.2em !important;
+}
+#loginDiv{
+  background: white;
+padding: 20px 50px;
+margin: 50px;
+border-radius: 10px;
+max-width: 300px;
+margin: 0 auto;
+margin-top: 50px;
+display: none;
+}
+.mdl-layout__header{
+  display: none;
+}
+
+.mdl-snackbar__text{
+  text-align: center !important;
+}
+#newHouseCard input, label{
+  font-size: 1em !important;
+}
+#editHouseCard{
+  padding-bottom: 30px;
+}
+#actions{
+  margin: 0 auto;
+}
+.cards{
+
+  padding-left: 35px;
+  padding-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-color: #ebebeb;
+}
+#streetInput{
+  display: inline-block;
+  width: 97%;
+  max-width: 825px;
+}
+#nummerInput{
+  width: 28%;
+  text-align: center;
+}
+#straatInput{
+  width: 70%;
+
+}
+.count{
+  width: 49%;
+}
+#naamInput{
+  width: 49%;
+
+}
+#emailInput{
+  width:49%;
+}
+#naamDiv{
+  width: 97%;
+  max-width: 825px;
+}
+#footer{
+  display: flex;
+}
+#footer{
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+#kosten{
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+#userHead{
+  margin-top: 4px;
+}
+.mdl-textfield{
+  padding-bottom: 20px;
+}
+.mdl-layout__tab-bar-container{
+  display: none;
+}
+.bloemDiv{
+
+  display:inline-block;
+  max-width: 411px;
+}
+select{
+  border: none;
+  font-family: "Helvetica","Arial",sans-serif;
+  background: #ebebeb;
+  font-size: 1.3em;
+  margin-right: 30px;
+  height: 36px;
+  color: #4e4d4d;
+}
+#lijstCard{
+  width: 100%;
+}
+#lijstCard .count{
+  width: 7%;
+}
+.lijst{
+  width:13%;
+}
+#lijstInputs{
+  width: 100%;
+  max-width: 100%;
+}
