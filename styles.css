@@ -7,11 +7,11 @@
   }
 }
 .mdl-layout__header {
-    color: #008000;
+    color:rgb(244,67,54);
     background: white;
 }
     .mdl-layout__header .mdl-layout__drawer-button {
-        color: #008000;
+        color: rgb(244,67,54);
     }
 
 main {
@@ -28,7 +28,8 @@ background: #ebebeb;
  #name:hover{
  background: rgb(250, 250, 250) !important;}
  h1,h2,h3{
- color:#008000}
+ color: rgb(244,67,54);
+}
  .page{
  display: none;
  }
@@ -47,9 +48,7 @@ background: #ebebeb;
  right: 50px;
  animation: createBox 1s;
  }
- main{
-   background: Url('assets/hero.jpg') center / cover;
- }
+
  #logoBig{
  display:none;}
 
