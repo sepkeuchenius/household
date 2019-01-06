@@ -24,7 +24,7 @@ $('#code, #username').keypress(function(e){
   }
 });
 $('#username').focus()
-
+$('#startup').fadeIn(1000,  function(){$('#startup').fadeOut(1000, function(){$('#startup').text('Welcome'); $('#startup').fadeIn(1000)}); })
 $("#loginButton").click(user_login);
 
 function user_login(){

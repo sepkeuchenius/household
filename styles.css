@@ -7,13 +7,13 @@
   }
 }
 .mdl-layout__header {
-    color:rgb(244,67,54);
+
     background: white;
 }
-    .mdl-layout__header .mdl-layout__drawer-button {
-        color: rgb(244,67,54);
-    }
 
+  .mdl-layout__header,h1,h2,h3, .mdl-layout__header , .mdl-layout__drawer-button {
+    color:#044c7c !important;
+}
 main {
 background: #ebebeb;
 
@@ -27,9 +27,7 @@ background: #ebebeb;
  text-align: center;}
  #name:hover{
  background: rgb(250, 250, 250) !important;}
- h1,h2,h3{
- color: rgb(244,67,54);
-}
+
  .page{
  display: none;
  }
