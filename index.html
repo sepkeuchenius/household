@@ -28,7 +28,7 @@
    'signInOptions': [
    firebase.auth.EmailAuthProvider.PROVIDER_ID
    ],
-   'tosUrl': '/index.html',
+   'tosUrl': '/login.html',
    };
   var app = firebase.initializeApp(config);
    var auth = app.auth();
@@ -108,9 +108,7 @@
                 <center>
                   <h1 style='margin-top:20%; display: none;' id='startup'>Hi, there</h1><br>
                    <div id="firebaseui-auth-container"></div>
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id='addButton' onclick = 'saveHouse()'>
-                  Start
-                </button>
+
 
 <!-- <img src='assets/HouseHold_4.png'  id='startup'style='display: none;'> -->
 </center>
