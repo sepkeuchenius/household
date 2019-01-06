@@ -3,12 +3,12 @@
   "name": "HouseHold",
   "icons": [
     {
-      "src": "/assets/HouseHold_4.png",
+      "src": "assets/HouseHold_4.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/HouseHold_4.png",
+      "src": "assets/HouseHold_4.png",
       "type": "image/png",
       "sizes": "512x512"
     }
