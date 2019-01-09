@@ -187,9 +187,7 @@ margin: 0 auto;
 margin-top: 50px;
 display: none;
 }
-.mdl-layout__header{
-  display: none;
-}
+
 
 .mdl-snackbar__text{
   text-align: center !important;
@@ -286,4 +284,7 @@ select{
 #lijstInputs{
   width: 100%;
   max-width: 100%;
+}
+#login{
+  padding-left: 70px;
 }
